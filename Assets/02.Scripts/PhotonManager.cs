@@ -63,7 +63,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("룸에 입장 완료");
 
-        // 베틀필드 씬을 로딩
+        // 방장일 경우에만 베틀필드 씬을 로딩
         if (PhotonNetwork.IsMasterClient == true)
         {
             PhotonNetwork.LoadLevel("BattleField");
