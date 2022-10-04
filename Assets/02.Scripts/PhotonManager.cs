@@ -30,6 +30,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    void Start()
+    {
+        userId = PlayerPrefs.GetString("USER_ID", $"USER_{Random.Range(0, 1000):000}");
+    }
+
     // 포톤 서버에 접속완료되었을 때 호출되는 콜백함수(이벤트)
     public override void OnConnectedToMaster()
     {
