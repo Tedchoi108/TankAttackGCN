@@ -80,8 +80,25 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         // PhotonNetwork.Instantiate("Tank", new Vector3(0, 3.0f, 0), Quaternion.identity, 0);
     }
 
+    // 로그인 버튼 클릭 이벤트(콜백함수)
     public void OnLoginButtonClick()
     {
+        SetUserId();
         PhotonNetwork.JoinRandomRoom();
+    }
+
+    void SetUserId()
+    {
+        // 유저아이디 필드가 Null 또는 "" 일 경우를 확인
+        if (string.IsNullOrEmpty(userId_IF.text))
+        {
+            userId = $"USER_{Random.Range(0, 1000):000}"; // 15 -> USER_015
+            userId_IF.text = userId;
+        }
+
+        // 유저 아이디를 저장
+        PlayerPrefs.SetString("USER_ID", userId);
+
+        PhotonNetwork.NickName = userId;
     }
 }
