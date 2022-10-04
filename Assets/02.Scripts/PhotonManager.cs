@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+// TextMeshPro 네임스페이스
+using TMPro;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
@@ -11,6 +13,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     private readonly string gameVersion = "1.0";
     // 유저ID
     public string userId = "Zackiller";
+
+    // 입력 필드
+    public TMP_InputField userId_IF;
+    public TMP_InputField roomName_IF;
 
     void Awake()
     {
