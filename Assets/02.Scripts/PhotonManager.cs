@@ -39,7 +39,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log("로비에 입장 완료");
 
         // 무작위 룸에 입장 요청
-        PhotonNetwork.JoinRandomRoom();
+        // PhotonNetwork.JoinRandomRoom();
     }
 
     // 랜덤 조인에 실패 했을 경우에 호출되는 콜백
@@ -72,5 +72,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
         // 방 입장완료 후 탱크 생성
         // PhotonNetwork.Instantiate("Tank", new Vector3(0, 3.0f, 0), Quaternion.identity, 0);
+    }
+
+    public void OnLoginButtonClick()
+    {
+        PhotonNetwork.JoinRandomRoom();
     }
 }
