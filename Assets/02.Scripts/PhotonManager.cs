@@ -68,6 +68,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LoadLevel("BattleField");
         }
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("BattleField");
 
         // 방 입장완료 후 탱크 생성
         // PhotonNetwork.Instantiate("Tank", new Vector3(0, 3.0f, 0), Quaternion.identity, 0);
