@@ -58,7 +58,9 @@ public class TankCtrl : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Fire();
+                //Fire();
+                //RPC 호출
+                pv.RPC("Fire", RpcTarget.AllViaServer, null);
             }
         }
     }
@@ -72,9 +74,15 @@ public class TankCtrl : MonoBehaviour
         tr.Rotate(Vector3.up * Time.deltaTime * h * turnSpeed);
     }
 
+    [PunRPC]
     void Fire()
     {
         audio.PlayOneShot(fireSfx);
         Instantiate(cannonPrefab, firePos.position, firePos.rotation);
     }
 }
+
+
+/*
+    RPC (Remote Procedure Call)
+*/
