@@ -102,6 +102,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             userId_IF.text = userId;
         }
 
+        // 입력필드가 Null이 아닌 경우
+        userId = userId_IF.text;
+
         // 유저 아이디를 저장
         PlayerPrefs.SetString("USER_ID", userId);
 
